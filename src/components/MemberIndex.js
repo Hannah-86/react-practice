@@ -3,13 +3,12 @@ import {Link} from 'react-router-dom'
 
 import './member.css'
 
-function Main() {
+function MemberIndex() {
   return(
     <div className="body">
-      <h1>main</h1>
-      <Link to="/sub">subページへ</Link>
+      <h1>member</h1>
     </div>
   )
 }
 
-export default Main
+export default MemberIndex

@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Main from './components/Main'
-import Sub from './components/Sub'
+import MemberIndex from './components/MemberIndex'
+import MemberProfile from './components/MemberProfile'
 import './App.css';
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
       <Header />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Main} />
-          <Route exact path="/sub" component={Sub} />
+          <Route exact path="/" component={MemberIndex} />
+          <Route exact path="/profile" component={MemberProfile} />
         </Switch>
       </BrowserRouter>
       <Footer />
