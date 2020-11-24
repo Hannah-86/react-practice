@@ -13,6 +13,7 @@ class MemberIndex extends React.Component {
 
   renderEvents() {
     const { members } = this.props
+    console.log(members)
 
     return members.map(member => (
       <tr key={member.id}>
@@ -41,10 +42,10 @@ class MemberIndex extends React.Component {
               <th>role</th>
             </tr>
           </thead>
+          <tbody>
+            {this.renderEvents()}
+          </tbody>
         </table>
-        <tbody>
-          {this.renderEvents}
-        </tbody>
       </div>
     )
   }
