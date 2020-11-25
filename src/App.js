@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={MemberIndex} />
-          <Route exact path="/profile" component={MemberProfile} />
+          <Route exact path="/profile/:id" component={MemberProfile} />
         </Switch>
       </BrowserRouter>
       <Footer />

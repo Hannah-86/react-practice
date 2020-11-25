@@ -11,15 +11,18 @@ class MemberIndex extends React.Component {
     this.renderEvents = this.renderEvents.bind(this)
   }
 
+  componentDidMount() {
+    this.props.readEvents()
+  }
+
   renderEvents() {
     const { members } = this.props
-    console.log(members)
 
     return members.map(member => (
       <tr key={member.id}>
         <td>{member.id}</td>
         <td>
-          <Link to={`members/${member.id}`}>
+          <Link to={`/profile/${member.id}`}>
             {member.name}
           </Link>
         </td>
@@ -53,4 +56,4 @@ class MemberIndex extends React.Component {
 
 const mapStateToProps = state => ({ members : state.members })
 const mapDispatchToProps = ({ readEvents })
-export default connect(mapStateToProps, mapDispatchToProps)(MemberIndex); 
+export default connect(mapStateToProps, mapDispatchToProps)(MemberIndex)

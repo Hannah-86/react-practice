@@ -1,7 +1,7 @@
 import {
 //  CREATE_EVENT,
   READ_EVENTS,
-//  READ_EVENT,
+  READ_EVENT,
 //  UPDATE_EVENT,
 //  DELETE_EVENT
 } from '../actions'
@@ -23,18 +23,29 @@ const defaultMembers = [
 
 export default (members = defaultMembers, action) => {
   switch (action.type) {
+    case READ_EVENT:
+      let newMember
+      members.forEach(member => {
+        console.log(member, action.id)
+        if (member.id === Number(action.id)) {
+          newMember = member
+        }
+      })
+      console.log([{ ...newMember }])
+      return [{ ...newMember }]
 //    case CREATE_EVENT:
 //    case READ_EVENT:
 //    case UPDATE_EVENT:
 //      const data = action.response.data
 //      return { ...events, [data.id]: data }
     case READ_EVENTS:
-      return members
+      console.log('Hi')
+      return defaultMembers
 //      return _.mapKeys(action.response.data, 'id')
 //    case DELETE_EVENT:
 //      delete events[action.id]
 //      return { ...events }
     default:
-      return members 
+      return defaultMembers 
   }
 }
